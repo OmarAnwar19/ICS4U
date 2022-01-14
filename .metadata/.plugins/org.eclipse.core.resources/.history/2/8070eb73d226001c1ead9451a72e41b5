@@ -1,0 +1,50 @@
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class MessingAboot {
+
+	public static boolean checkVotingAge(int intUserAge) {
+				
+		boolean bolVotingAge;
+		
+		if (intUserAge >= 18) {
+			
+			bolVotingAge = true;
+			
+		} else {
+			
+			bolVotingAge = false;
+			
+		}
+		
+		return(bolVotingAge);
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int intUserAge;
+		
+		System.out.println("Please enter your age: ");
+		
+		intUserAge = new Scanner(System.in).nextInt();
+		
+		
+		boolean bolAge = checkVotingAge(intUserAge);
+		
+		if (bolAge == true) {
+			
+			System.out.println("You can vote");
+			
+		} else {
+			
+			System.out.println("You can NOT vote");
+			
+		}
+		
+		
+	}
+
+}

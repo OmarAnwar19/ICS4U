@@ -1,0 +1,10 @@
+/**
+ * Description: PROGRAM DESCRIPTION HERE 
+ *
+ * @author (Omar Anwar)
+ * @version (12/13/2021) 
+ */
+
+public class Song extends Media{
+
+}

@@ -1,0 +1,21 @@
+import java.util.Arrays;
+
+public class MessingAboot {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		byte[] bytArray = new byte[10];
+		
+		
+		for (int i = 0; i < bytArray.length; i++) {
+			
+			bytArray[i] = (byte) ((Math.random() * (3)) + 1);
+			
+		}
+		
+		System.out.println(Arrays.toString(bytArray));
+		
+	}
+
+}

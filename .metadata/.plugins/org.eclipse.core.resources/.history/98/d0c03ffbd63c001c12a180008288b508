@@ -1,0 +1,25 @@
+/**
+ * Description: PROGRAM DESCRIPTION HERE 
+ *
+ * @author (Omar Anwar)
+ * @version (DATE/VERSION NUMBER) 
+ */
+
+import java.util.ArrayList;
+
+public class AnwarALittleBitHarderArrayList {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		ArrayList<Integer> listIntegers = new ArrayList<Integer>();
+		
+		for (int i = 0; i < 10; i++) {
+			
+			listIntegers.add((int) Math.random()*(999-1+1)+1);
+			
+		}
+		
+	}
+
+}

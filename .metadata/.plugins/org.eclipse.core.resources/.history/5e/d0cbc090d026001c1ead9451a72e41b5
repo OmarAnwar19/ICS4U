@@ -1,0 +1,20 @@
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class MessingAboot {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String stringArray[] = {"h", "e", "l", "l", "o", "w"};
+		
+		for (int i=0; i <= stringArray.length; i++) {
+			
+			System.out.println(stringArray[i]);
+			
+		}
+		
+	}
+
+}

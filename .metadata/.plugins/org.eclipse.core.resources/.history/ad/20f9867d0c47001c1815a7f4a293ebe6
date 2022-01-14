@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class AnwarArrayListOfObjectsExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String strFirstName = null, strLastName = null, strUserResponse = null;
+		short shrHeightCM = 0;
+		byte bytAge = 0;
+		
+		ArrayList<Person> listPerson = new ArrayList<Person>();
+		
+		do {
+			
+			System.out.print("Would you like to add another person to your list? (yes(y) / no(n)): ");
+			
+			strUserResponse = new Scanner(System.in).nextLine();
+			
+			//listPerson.add(new Person(strFirstName, strLastName, shrHeightCM, bytAge));
+			
+		} while (strUserResponse.equalsIgnoreCase("y") || strUserResponse.equalsIgnoreCase("yes"));
+		
+		System.out.println("\nEXITED PROGRAM\n");
+		
+	}
+
+}

@@ -1,0 +1,109 @@
+/**
+ * Description: Get and Set method student class
+ *
+ * @author (Omar Anwar)
+ * @version (11/02/2021)
+ */
+
+/**
+ * @author omara
+ *
+ */
+
+//import java utils
+import java.util.*;
+
+public class AnwarStudentTestClassArrayOfObjects {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		// declare a variable to store the number of students they want to enter
+		short shrNumStudents = 0;
+
+		// declare variables to store the users name and age
+		String strName;
+		byte bytAge = 0;
+
+		// declare boolean variable to loop try and catch block
+		boolean bolTryCatch = false;
+
+		// declare an array of type Student class
+		NewStudent[] studentList;
+
+		// do while loop to make sure we get the correct input from the user
+		do {
+
+			// try to do all of the following code, and check if we get any errors
+			try {
+
+				// ask user how many students they wanna add, and make the array that long
+				System.out.print("How many students would you like to add?: ");
+
+				// store the number that the user inputs into the variable that we declared
+				// earlier
+				shrNumStudents = new Scanner(System.in).nextShort();
+
+				// set the boolean = false, so doesn't loop
+				bolTryCatch = false;
+
+				// if the user enters incorrect data types, tell them to enter a new value
+			} catch (Exception ex) {
+
+				// tell the user that they entered an incorrect value, and loop the do while
+				System.out.println("\nPLEASE ENTER A VALID INPUT\n");
+
+				// set the boolean = true, so it keeps looping
+				bolTryCatch = true;
+
+			}
+
+			// do all of this code while the user enters incorrect code
+		} while (bolTryCatch);
+
+		// declaring the size of the array
+		studentList = new NewStudent[shrNumStudents];
+
+		for (int i = 0; i < studentList.length; i++) {
+			
+			do {
+				
+				try {
+					
+					// loop through the array and get info from the user to initialize instances of
+					// the class
+					// ask for the student name
+					System.out.print("\nPlease enter student " + (i + 1) + " name: ");
+
+					// populate the variable
+					strName = new Scanner(System.in).nextLine();
+
+					// prompting the user to enter their age
+					System.out.print("Please enter student " + (i + 1) + " age: ");
+
+					// populating the variable
+					bytAge = new Scanner(System.in).nextByte();
+						
+					//setting the student name as the input from the user
+					studentList[i].setStudentName(strName);
+						
+					//setting the student age as the input from the user
+					studentList[i].setStudentAge(bytAge);}
+					
+				} catch (Exception ex) {
+					
+					// tell the user that they entered an incorrect value, and loop the do while
+					System.out.println("\nPLEASE ENTER A VALID INPUT\n");
+
+					// set the boolean = true, so it keeps looping
+					bolTryCatch = true;
+					
+				}
+				
+			} while (bolTryCatch)
+			
+	}
+				
+	}
+
+}

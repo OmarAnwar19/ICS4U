@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class MessingAboot {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner scanner1 = new Scanner(System.in);
+
+		byte bytArrayLength;
+		
+		System.out.print("Enter array length: ");
+		
+		bytArrayLength = scanner1.nextByte();
+		
+		System.out.println("");
+		
+		int[] array1 = new int[bytArrayLength];
+		
+		for (int x: array1) {
+			
+			System.out.print("Enter value: ");
+			array1[x] = scanner1.nextInt();
+			
+		}
+		
+		System.out.println(array1.toString());
+		
+	}
+
+}

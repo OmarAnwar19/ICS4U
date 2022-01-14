@@ -1,0 +1,31 @@
+
+
+
+
+public class Anwar2DArraysEx1 {
+	// TODO Auto-generated method stub
+
+	// declaring and hard coding a 3x3 array
+	byte[][] grid = {
+			
+			{1 ,2 ,3 ,4},
+			{5 ,6 ,7 ,8},
+			{9 ,10 ,11 ,12}
+			
+	};
+			
+			
+				
+	// for loop
+	for(int i = 0;i<grid.length;i++) {
+			
+			//tabbing
+			for (int j = 0; j < grid[0].length; j++) {
+				
+				System.out.print(grid[i][j] + "\t");
+				
+			}
+			
+			//drop the next row to a new line
+			System.out.println();
+		}

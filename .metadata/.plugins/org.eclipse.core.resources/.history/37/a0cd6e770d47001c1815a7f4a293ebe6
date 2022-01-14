@@ -1,0 +1,67 @@
+import java.util.*;
+
+public class AnwarArrayListOfObjectsExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String strFirstName = null, strLastName = null, strUserResponse = null;
+		short shrHeightCM = 0;
+		byte bytAge = 0;
+		boolean bolTC = false;
+
+		ArrayList<Person> listPerson = new ArrayList<Person>();
+
+		do {
+
+			System.out.print("Would you like to add person to your list? (yes(y) / no(n)): ");
+
+			strUserResponse = new Scanner(System.in).nextLine().toLowerCase();
+
+			if (strUserResponse.contains("y") || strUserResponse.contains("yes")) {
+
+				System.out.println("\nPlease enter first name: ");
+				strFirstName = new Scanner(System.in).nextLine();
+				
+				System.out.println("Please enter last name: ");
+				strLastName = new Scanner(System.in).nextLine();
+				
+				do {
+					
+					try {
+
+						System.out.println("Please enter height (cm): ");
+						shrHeightCM = new Scanner(System.in).nextShort();
+						
+						System.out.println("Please enter age (yrs): ");
+						bytAge = new Scanner(System.in).nextByte();
+
+						
+					} catch (Exception ex) {
+
+						System.out.println("\nPLEASE ENTER A VALID INPUT\n");
+
+					}
+
+					listPerson.add(new Person(strFirstName, strLastName, shrHeightCM, bytAge));
+					
+				} while (bolTC);
+
+			} else {
+
+			}
+
+
+		} while (strUserResponse.contains("y") || strUserResponse.contains("yes"));
+
+		for (Person person: listPerson) {
+			
+			System.out.println(person);
+			
+		}
+		
+		System.out.println("\nEXITED PROGRAM\n");
+
+	}
+
+}

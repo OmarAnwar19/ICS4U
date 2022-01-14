@@ -1,0 +1,113 @@
+/**
+ * Description: This is the super class for the rest of the media classes, the
+ * super class is the one which holds common variables and methods which are
+ * shared by all types of media, here, we hold the product name, product
+ * quantity, product price, and the getters and setters for all of them. This is
+ * because these attributes are shared by all members of the department store
+ *
+ * @author (Omar Anwar)
+ * @version (11/18/2021)
+ */
+
+public class Media {
+
+	// declaring instance variables, for the product name, product quantity, and
+	// product price
+	private String strTitle;
+	private int intLengthSeconds;
+
+	// first constructor for the media type, takes in name, and length
+	public Media(String ttl, int sec) {
+
+		// initializing the instance variables using the user inputs
+		this.strTitle = ttl;
+		this.intLengthSeconds = sec;
+
+	}
+
+	// default constructor, incase the user does not enter any values
+	public Media() {
+
+		// since there are no user inputs taken in, initialize the instance variables to
+		// a preset value
+		this.strTitle = "Media Title";
+		this.intLengthSeconds = 0;
+
+	}
+
+	private String formatTime(int sec) {
+		
+		hours = totalSecs / 3600;
+		minutes = (totalSecs % 3600) / 60;
+		seconds = totalSecs % 60;
+
+		timeString = String.format("%02d:%02d:%02d", hours, minutes, seconds);
+		
+	}
+	
+	// getter method for the media name, returns the media name as a string
+	public String getTitle() {
+
+		// return the media name as a string
+		return (this.strTitle);
+
+	}
+
+	// getter method for the length of the media item
+	public String getLength() {
+
+		// return the length of the media in seconds, and the length of the media as a formatted time
+		return ("Length in seconds : " + this.intLengthSeconds + "\nFormatted length (hh:mm:ss): " + );
+		
+		
+	}
+
+	// getter method for the product price, returns the product price as a float
+	public float getPrice() {
+
+		// return the product price as a concatenated string with the price as a float,
+		// and a dollar sign
+		return (this.fltPrice);
+
+	}
+
+	// setter method for the product name, takes in a user input, and assigns it as
+	// the product name
+	public void setProductName(String pnm) {
+
+		// assign the string that the user entered to the product name instance variable
+		this.strProductName = pnm;
+
+	}
+
+	// setter method for the product quantity, takes in a user input, and assigns it
+	// as the product quantity
+	public void setQuantity(int qty) {
+
+		// assign the integer that the user entered to the product quantity instance
+		// variable
+		this.intQuantity = qty;
+
+	}
+
+	// setter method for the product price, takes in a user input, and assigns it as
+	// the product price
+	public void setPrice(float prc) {
+
+		// assign the float that the user entered to the product price instance variable
+		this.fltPrice = prc;
+
+	}
+
+	// method for getting the sub total, which is the price x the quantity
+	public float getSubTotal() {
+
+		// doing the calcualation for the price
+		fltSubPrice = (float) ((this.getPrice() * this.getQuantity()));
+
+		// returtning the value
+		return (fltSubPrice);
+
+	}
+
+}

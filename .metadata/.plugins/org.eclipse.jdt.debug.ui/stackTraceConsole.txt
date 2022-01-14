@@ -1,0 +1,134 @@
+// for the customers, make a customer order, and then add it to the string
+		// arraylist for customers, at the end
+		// print the index of the customer to output the receipt
+
+		// declaring variable for user menu choice, and booleans for looping and order
+		// completion
+		int intUserInput = 0;
+		boolean bolTC = false;
+		boolean bolOrderComplete = false;
+
+		// variable for the customer name
+		String strCustomerName = null;
+
+		// creating new ArrayLists of Objects for all of the grocery, houseware, and
+		// seasonal items we add
+		ArrayList<Grocery> deptGrocery = new ArrayList<Grocery>();
+		ArrayList<Houseware> deptHouseware = new ArrayList<Houseware>();
+		ArrayList<Seasonal> deptSeasonal = new ArrayList<Seasonal>();
+
+		// making an arraylist for the customers orders
+		ArrayList<Object> customerOrder = new ArrayList<Object>();
+
+		// calling the method to initialize the array lists, passing the different
+		// array lists into it
+		initArrayList(deptGrocery, deptHouseware, deptSeasonal);
+
+		// do while loop, to allow the user to do as many inputs as they want, as long
+		// as they do not enter 5, to exit the program
+		do {
+
+			// do while with a try and catch, to check for any invalid inputs
+			do {
+
+				// output the menu options
+				System.out.print(
+						"\n--------------------------------------\nWelcome to the Ottawa Department Store \nPlease select a menu option: "
+								+ "\n1.) Add Items to Database" + "\n2.) Update Items in Database"
+								+ "\n3.) Create Customer Order" + "\n4.) Output Customer Reciept"
+								+ "\n5.) Exit Program \n");
+
+				// try all of the following code, and check for any errors
+				try {
+
+					// this line only serves to make the program look better
+					System.out.print("\n>>> ");
+
+					// assign the variable for user input to whatever they enter next
+					intUserInput = new Scanner(System.in).nextInt();
+
+					// if the user enters 1, call the method to add items to the database
+					if (intUserInput == 1) {
+
+						// call the method to add items to the database
+						addToDatabase(deptGrocery, deptHouseware, deptSeasonal);
+
+						// if the user enters 2, call the method to update items in the database
+					} else if (intUserInput == 2) {
+
+						// call the method to update items in the database
+						updateDatabase(deptGrocery, deptHouseware, deptSeasonal);
+
+						// if the user enters 3, call the method to create the receipt (i.e choose the
+						// quantities) from the database
+					} else if (intUserInput == 3) {
+
+						// call the method to create a customer order
+						createOrder(deptGrocery, deptHouseware, deptSeasonal, customerOrder);
+
+						// if the user enters 4, call the method to print out the receipt that has been
+						// created
+					} else if (intUserInput == 4) {
+
+						// check if the user has added any items to the receipt, if not, don't allow
+						// them
+						// to output the receipt
+						if (intTotalItems == 0) {
+
+							// output a message to the user that they can not print the receipt yet
+							System.out.println("\nError. Can not output customer reciept before it is made.\n");
+
+							// otherwise, if the counter for items is not 0, this means they already added
+							// an item, so let them print the receipt as usual
+						} else {
+
+							// call the method to print the customer order
+							printOrder(customerOrder, deptGrocery, deptHouseware, deptSeasonal);
+
+							// make the boolean for order done = true, to exit the program
+							bolOrderComplete = true;
+
+							// making the boolean for looping = false, to make sure we dont loop again
+							bolTC = false;
+
+						}
+
+						// if the user enters 5 for their input
+					} else if (intUserInput == 5) {
+
+						// make the boolean for looping = false, to make sure that we do not run the
+						// program again by accident
+						bolTC = false;
+
+						// otherwise, if the user enters a number not on the menu
+					} else {
+
+						// ask them to enter a valid menu option
+						System.out.println("\nPleas enter a valid menu option.\n");
+
+						// set the boolean for looping = true
+						bolTC = true;
+
+					}
+
+					// if you find any errors, make the boolean to loop true, and tell the user to
+					// enter another value
+				} catch (Exception ex) {
+
+					// ask the user to enter a correct value
+					System.out.println("\nPlease enter a valid input.\n");
+
+					// make the boolean for looping true
+					bolTC = true;
+
+				}
+
+				// do all of the above code as long as the boolean for incorrect value
+			} while (bolTC);
+
+			// do all of the above until the user enters 5, or outputs a receipt, then
+			// terminate the program
+		} while (intUserInput != 5 && bolOrderComplete != true);
+
+		// print out a message that the program is terminated
+		System.out.println("\nThank you for using the Ottawa Department Store cashier system!\n");

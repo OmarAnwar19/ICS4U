@@ -1,0 +1,23 @@
+/**
+ * Description: PROGRAM DESCRIPTION HERE 
+ *
+ * @author (Omar Anwar)
+ * @version (DATE/VERSION NUMBER) 
+ */
+package Anwar2DArrays;
+
+/**
+ * @author omara
+ *
+ */
+public class Anwar2DArrayseEx2 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

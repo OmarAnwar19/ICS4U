@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+public class MessingAboot {
+
+	
+	public static String getLyrics(String songName) {
+		
+		String strLyrics;
+		
+		strLyrics = "I love " + songName;
+		
+		return(strLyrics);
+		
+	}
+	
+	public static void checkScholarship(byte bytAverage, int intVolHours) {
+		
+		//checking first criteria
+		if (bytAverage >= 90 && intVolHours >= 100) {
+
+			//displaying message to the user
+			System.out.println("\nTop 6 Average: " + bytAverage);
+			System.out.println("Volunteer Hours: " + intVolHours);
+			System.out.println("You are eligible for a scholarship.");
+
+		//checking second criteria
+		} else if (bytAverage >= 80 && intVolHours >= 200) {
+
+			//display message to the user
+			System.out.println("Top 6 Average: " + bytAverage);
+			System.out.println("Volunteer Hours: " + intVolHours);
+			System.out.println("You are eligible for a scholarship.");
+
+		//if neither are valid, tell the user they are not eligible for a scholarship
+		} else {
+
+			//display message to the user
+			System.out.println("You are not eligible for a scholarship.");
+
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner scanner1 = new Scanner(System.in);
+		
+		String strSongName, strLyrics;
+		
+		System.out.println("LyricFy, Lyrics Finder.");
+		System.out.println("Please enter song name: ");
+	
+		strSongName = scanner1.nextLine();
+		
+		strLyrics = getLyrics(strSongName);
+		
+		System.out.println("\nLyrics: ");
+		System.out.println(strLyrics);
+		
+	}
+
+}
